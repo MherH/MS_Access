@@ -106,7 +106,6 @@
             this.tsbSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tsbSearch.Name = "tsbSearch";
             this.tsbSearch.Size = new System.Drawing.Size(150, 37);
-            this.tsbSearch.Click += new System.EventHandler(this.tsbSearch_Click);
             // 
             // tsbSearchIcon
             // 
@@ -115,7 +114,8 @@
             this.tsbSearchIcon.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbSearchIcon.Name = "tsbSearchIcon";
             this.tsbSearchIcon.Size = new System.Drawing.Size(34, 34);
-            this.tsbSearchIcon.Text = "toolStripButton1";
+            this.tsbSearchIcon.Text = "Search";
+            this.tsbSearchIcon.Click += new System.EventHandler(this.tsbSearch_Click);
             // 
             // dgvPosts
             // 

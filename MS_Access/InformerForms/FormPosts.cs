@@ -32,6 +32,7 @@ namespace MS_Access.InformerForms
             //editpostition = editpositionnametext;
             //editpostname = editpostnametext;
             instance = this;
+            this.FormClosing += Posts_FormClosing;
         }
 
 
@@ -71,29 +72,35 @@ namespace MS_Access.InformerForms
             addPosts.ShowDialog();
         }
 
+        private void dgvLoad()
+        { 
+        OleDbConnection con = new OleDbConnection();
+            con.ConnectionString = FormMain._instance.Connstring;
+            con.Open();
+
+        }
 
         private void tsbSearch_Click(object sender, EventArgs e)
         {
-            string SearchQuery = "select * from  Posts where (id = @id or Posts.PostName = @postname or Posts.[Position] = @position";
+            if (tsbSearch.Text == "" || tsbSearch.Text == null)
+                return;
+            string searchQuery = "SELECT * FROM Posts WHERE (Posts.[PostName] = " + "@postname" + " or Posts.[Position] = @position)";
+            cmd = new OleDbCommand(searchQuery, FormMain._instance.oledbconstring);
             cmd.Parameters.AddWithValue("@postname", tsbSearch.Text);
             cmd.Parameters.AddWithValue("@position", tsbSearch.Text);
-            cmd.Parameters.AddWithValue("@id", tsbSearch.Text.ToString());
-            cmd = new OleDbCommand(SearchQuery, FormMain._instance.oledbconstring);
             FormMain._instance.oledbconstring.Open();
-            cmd.ExecuteReader();
+            OleDbDataReader reader = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(reader);
             FormMain._instance.oledbconstring.Close();
-            FormPosts.instance.tsbUpdate_Click(null, null);
             tsbSearch.Clear();
         }
 
         public bool searchclicked = false;
 
-        string editidtext;
-        string editpostnametext;
-        string editpositionnametext;
         public void tsbEdit_Click(object sender, EventArgs e)
         {
-            if(FormPosts.instance.dgvPosts.RowCount == 0 )
+            if(FormPosts.instance.dgvPosts.SelectedRows.Count == 0 )
             {
                 MessageBox.Show("Տող ընտրված չէ");
                 return;
@@ -103,9 +110,15 @@ namespace MS_Access.InformerForms
             FormEditPosts editPosts = new FormEditPosts();
             editPosts.ShowDialog();
 
-        }   
+        }
 
-
+        private void Posts_FormClosing(Object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                FormMain._instance.isopened = false;
+            }
+        }
 
     }
 }

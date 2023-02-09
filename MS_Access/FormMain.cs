@@ -26,18 +26,37 @@ namespace MS_Access
             _instance = this;
         }
 
-
+        public bool isopened = false;
         private void tspPost_Click(object sender, EventArgs e)
         {
             FormPosts f2 = new FormPosts();
-            f2.Show();
+            if (isopened == true)
+            {
+                MessageBox.Show("Պատուհանը արդեն բացված է");
+                f2.BringToFront();
+                return;
+            }
+            else
+            {
+                f2.Show();
+                isopened = true;
+            }
         }
 
         public void tsmBrowse_Click(object sender, EventArgs e)
         {
             FormBrowse formBrowse = new FormBrowse();
-            formBrowse.Show();
-            this.Connstring = formBrowse.connstring;
+            if (formBrowse.DialogResult == DialogResult.OK)
+            {
+                MessageBox.Show("Պատուհանը արդեն բացված է");
+                return;
+            }
+            else
+            {
+                formBrowse.ShowDialog();
+                this.Connstring = formBrowse.connstring;
+
+            }
 
         }
 
