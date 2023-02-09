@@ -1,0 +1,1003 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5779DDCF-0067-4F84-A33E-A6C956664E91}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MS_Access</RootNamespace>
+    <AssemblyName>MS_Access</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DatabaseConnections, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DatabaseConnections.2.0.0\lib\net35\DatabaseConnections.dll</HintPath>
+    </Reference>
+    <Reference Include="DatabaseConnections.OleDb, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DatabaseConnections.OleDb.2.0.0\lib\net35\DatabaseConnections.OleDb.dll</HintPath>
+    </Reference>
+    <Reference Include="EasyTabs, Version=2.0.0.39, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EasyTabs.2.0.0\lib\net40\EasyTabs.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="FreeSql, Version=3.2.683.0, Culture=neutral, PublicKeyToken=a33928e5d4a4b39c, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSql.3.2.683\lib\net451\FreeSql.dll</HintPath>
+    </Reference>
+    <Reference Include="FreeSql.Provider.MsAccess, Version=3.2.683.0, Culture=neutral, PublicKeyToken=1d230335e3c5b22e, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSql.Provider.MsAccess.3.2.683\lib\net45\FreeSql.Provider.MsAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="MDatabase">
+      <HintPath>..\..\EasyTabsApp\EasyTabsApp\DLLS\MDatabase.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.8.5\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EasyTabs.2.0.0\lib\net40\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EasyTabs.2.0.0\lib\net40\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Svg, Version=2.4.3.29446, Culture=neutral, PublicKeyToken=12a0bac221edeae2, processorArchitecture=MSIL">
+      <HintPath>..\packages\Svg.2.4.3\lib\Svg.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Win32Interop.Dwmapi, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Win32Interop.Dwmapi.1.0.1\lib\Win32Interop.Dwmapi.dll</HintPath>
+    </Reference>
+    <Reference Include="Win32Interop.Gdi32, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Win32Interop.Gdi32.1.0.1\lib\Win32Interop.Gdi32.dll</HintPath>
+    </Reference>
+    <Reference Include="Win32Interop.Kernel32, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Win32Interop.Kernel32.1.0.1\lib\Win32Interop.Kernel32.dll</HintPath>
+    </Reference>
+    <Reference Include="Win32Interop.User32, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Win32Interop.User32.1.0.1\lib\Win32Interop.User32.dll</HintPath>
+    </Reference>
+    <Reference Include="Win32Interop.Uxtheme, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Win32Interop.Uxtheme.1.0.1\lib\Win32Interop.Uxtheme.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BtnForms\FormEditPosts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BtnForms\FormEditPosts.Designer.cs">
+      <DependentUpon>FormEditPosts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BtnForms\FormAddPosts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BtnForms\FormAddPosts.Designer.cs">
+      <DependentUpon>FormAddPosts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileConnect\FormBrowse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileConnect\FormBrowse.Designer.cs">
+      <DependentUpon>FormBrowse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InformerForms\FormPositions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformerForms\FormPositions.Designer.cs">
+      <DependentUpon>FormPositions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InformerForms\FormPosts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformerForms\FormPosts.Designer.cs">
+      <DependentUpon>FormPosts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BtnForms\FormAddPosts.resx">
+      <DependentUpon>FormAddPosts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BtnForms\FormEditPosts.resx">
+      <DependentUpon>FormEditPosts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileConnect\FormBrowse.resx">
+      <DependentUpon>FormBrowse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformerForms\FormPositions.resx">
+      <DependentUpon>FormPositions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformerForms\FormPosts.resx">
+      <DependentUpon>FormPosts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1_Split_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\109_gorc.partq.veranayum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Abonements_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AbonementTypes_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add16.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Adddd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\animation_search_24.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attachment.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackupRestore.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bank-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Banks_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BonusInMoney_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BonusMove_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brokerpercent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clients_48_hot.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Club_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coloredIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Company.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy_24_hot.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Copy_New.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CourseAdd.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CourseEdit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CourseView.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crm_age dicount.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crm_age dicount1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crm_discount types.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crm_discount types1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crm_season dicount.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crm_season dicount1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CustomerReviewCredit_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DealType.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DealType_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DealType_merge.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DealTypeEdit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DealTypeNew.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DealTypeRemove.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DealTypeView.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_24x24.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Document_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Down_16x16 .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Down_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Draft_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_24_hot.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit16.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email_animation.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excelLoad.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exel24.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exel24.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExpenceAdd_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExpenceName_merge.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExtendAbonement_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FaceBook-icon - settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facebook-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facebook-icon-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fedex_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FileGroup_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filesystem_32_hot.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flashCard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FR.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\google.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Go-previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green_phone.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\history.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inbox_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inbox_48.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InboxMail_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventory_categories_24.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventory_categories_zoom_24.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LedOff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LedOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoadingAnimation.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoadingAnimation1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo48.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoHeader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoMersoft.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoOlny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mask_241.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mask_close_241.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\media-record-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\media-record-xxl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MoneyUnitList_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\okt.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrderCustomerAdd_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PartnerNew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Partners_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\payment-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Phone-48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Picture.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PrepaymentBack_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProductBlackList_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reception_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\removed16.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Re-releaseAbonement_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search2-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search2-48.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search-24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SearchMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\selfCompany.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\selfCompany_add_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\selfCompany_delete_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\selfCompany_edit_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\selfCompany_view 2_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sent_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sms2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spam_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Start_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\target.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tools.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Translator_24.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TranslatorBase_24.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trash_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tsmPatientPayment.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unknown.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Up_16x16 .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Up_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user access_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserPermission.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Users_24.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\View.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\window_config_24_hot.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wizard_find_24_hot.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom_16_hot.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1_Clear_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1_Configurations_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1_Cunfirm_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1_Excel_Export_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1_Excel_Import_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1_Filter_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1_Left_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1_Print_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1_Refresh_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1_Refresh2_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1_Right_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1_Save_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\29_apranqner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\62_artadrox_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\74_tvjalneri hemqi grarum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\83_patver gnord.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AccountBankMoneyIn_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AccountBankMoneyOut_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ActionBook_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_document_icon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_Nod_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Address_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Addresses_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Advertisement_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\App-password-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BuyerRequestAnswer_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BuyersPaymentStats_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CashInOrderBook_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CertificateOfCompletion_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Combine_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CompanyData_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ComplainName.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Contracts_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CursorXP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Customer_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CustomerList_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Degree_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_document_icon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Discount_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\downGreen.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dublicate_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DynamicReports_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e-mail_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EMails_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Employyee_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Employyee_Percent_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Excel_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Expence_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExpencePlaningAdd_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Facility_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FacilityList_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FacilityType_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Files_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\finger_print-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fingerprint_in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fingerprint_out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FirmType_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder - Messenger files.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder - Work.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GreaterThan_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gridSettings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hertagrum-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hollyday.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons-55.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconsTestService.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Importance_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Informers_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InvoiceBook_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leftBlue.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leftGreen.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoadFromFile_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Map_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Meeting_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MerLogo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MerLogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MerSoft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MerSoftLogo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Messenger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\occupational_therapy_256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrderFacilityNote_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\percentGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Position_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PrintFamousPeople_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProductActiveIngredient_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProductComplectation_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProductMoveAdd_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProductSplit_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Project_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProviderList_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProviderPrepayment_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProviderReviewCredit_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Remove_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Report_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rightBlue.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rightGreen.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rivals_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Route_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SalesFunnel_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SalesStats_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveToFile_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Status_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stop_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\syringe_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Task_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tools_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ToolsConfiguration_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Translation_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unit_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\up.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upGreen.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserGroup_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Users_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\View_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Visit_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WindowCheking_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Work.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WorkPlanStats_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom_24.bmp" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>if exist "$(TargetPath).locked" del "$(TargetPath).locked"
+if exist "$(TargetPath)" if not exist "$(TargetPath).locked" move "$(TargetPath)" "$(TargetPath).locked"</PreBuildEvent>
+  </PropertyGroup>
+</Project>

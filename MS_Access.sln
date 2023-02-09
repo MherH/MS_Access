@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32804.467
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS_Access", "MS_Access\MS_Access.csproj", "{5779DDCF-0067-4F84-A33E-A6C956664E91}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{453B94C7-11AC-4303-AD20-B30D875766F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Applications", "Applications", "{E8849290-AE38-4D5F-A0BA-C4EAB21701F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApplicationLibraries", "ApplicationLibraries", "{73B28501-3BDA-4E94-9364-847B68D9063C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{C6009D0A-CFD7-4BCD-8ACF-4D2C6B64AF4A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OleDB", "OleDB", "{C5D2BE60-9BD5-4217-A622-49EA57EC3FDB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Desktop", "Desktop", "{B0839C51-7945-4FD1-9462-B46A0D4171F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{48C8EAC7-966A-425C-9F7D-6C471254702C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5779DDCF-0067-4F84-A33E-A6C956664E91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5779DDCF-0067-4F84-A33E-A6C956664E91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5779DDCF-0067-4F84-A33E-A6C956664E91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5779DDCF-0067-4F84-A33E-A6C956664E91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5779DDCF-0067-4F84-A33E-A6C956664E91} = {B0839C51-7945-4FD1-9462-B46A0D4171F8}
+		{73B28501-3BDA-4E94-9364-847B68D9063C} = {E8849290-AE38-4D5F-A0BA-C4EAB21701F5}
+		{C6009D0A-CFD7-4BCD-8ACF-4D2C6B64AF4A} = {E8849290-AE38-4D5F-A0BA-C4EAB21701F5}
+		{C5D2BE60-9BD5-4217-A622-49EA57EC3FDB} = {E8849290-AE38-4D5F-A0BA-C4EAB21701F5}
+		{B0839C51-7945-4FD1-9462-B46A0D4171F8} = {E8849290-AE38-4D5F-A0BA-C4EAB21701F5}
+		{48C8EAC7-966A-425C-9F7D-6C471254702C} = {453B94C7-11AC-4303-AD20-B30D875766F0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FB3A482B-3606-4825-A745-3438698B1693}
+	EndGlobalSection
+EndGlobal
