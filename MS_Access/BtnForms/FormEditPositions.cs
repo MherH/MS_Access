@@ -12,40 +12,37 @@ using System.Windows.Forms;
 
 namespace MS_Access.BtnForms
 {
-    public partial class FormEditPosts : Form
+    public partial class FormEditPositions : Form
     {
         OleDbCommand command;
-        public static FormEditPosts instance;
+        public static FormEditPositions instance;
         public string id;
-        
-        public FormEditPosts()
+        public FormEditPositions()
         {
             InitializeComponent();
             instance = this;
-            txtPostNameEdit.Text = FormPosts.instance.GetPostName();
+            txtPositionNameEdit.Text = FormPositions.instance.GetPositionName();
         }
 
 
-
-        public void btnSaveEdit_Click(object sender, EventArgs e)
+        private void btnSaveEdit_Click(object sender, EventArgs e)
         {
-            string insertQuery = "UPDATE Posts SET Posts.PostName =" + " @postname " +
-                "WHERE (id = @id);";
+            string insertQuery = "UPDATE Positions SET Positions.PositionName =" + " @positionname " + "WHERE (id = @id);";
             command = new OleDbCommand(insertQuery, FormMain._instance.oledbconstring);
-            command.Parameters.AddWithValue("@postname", txtPostNameEdit.Text);
-            command.Parameters.AddWithValue("@id", Convert.ToInt32(FormPosts.instance.dgvPosts.CurrentRow.Cells[0].Value.ToString()));
+            command.Parameters.AddWithValue("@positionname", txtPositionNameEdit.Text);
+            command.Parameters.AddWithValue("@id", Convert.ToInt32(FormPositions.instance.dgvPostitions.CurrentRow.Cells[0].Value.ToString()));
             FormMain._instance.oledbconstring.Open();
             command.ExecuteNonQuery();
             FormMain._instance.oledbconstring.Close();
             MessageBox.Show("Տվյալները թարմացված են");
-            FormPosts.instance.tsbUpdate_Click(null, null);
+            FormPositions.instance.tsbUpdatePositions_Click(null, null);
             this.Close();
-            txtPostNameEdit.Clear();
+            txtPositionNameEdit.Clear();
         }
 
         private void btnCancelEdit_Click(object sender, EventArgs e)
         {
-            txtPostNameEdit.Clear();
+            txtPositionNameEdit.Clear();
             this.Close();
         }
     }

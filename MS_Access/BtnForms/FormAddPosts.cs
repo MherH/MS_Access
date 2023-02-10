@@ -17,7 +17,6 @@ namespace MS_Access.BtnForms
     {
         OleDbCommand cmd;
         public string postnametext;
-        public string positionnametext;
         public static FormAddPosts instanceaddpost;
         public FormAddPosts()
         {

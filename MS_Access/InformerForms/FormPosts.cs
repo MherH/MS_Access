@@ -75,10 +75,9 @@ namespace MS_Access.InformerForms
             }
             else
             {
-                string searchQuery = "SELECT * FROM Posts WHERE (Posts.[PostName] = " + "@postname" + " or Posts.[Position] = @position)";
+                string searchQuery = "SELECT * FROM Posts WHERE (Posts.[PostName] = " + "@postname)";
                 cmd = new OleDbCommand(searchQuery, FormMain._instance.oledbconstring);
                 cmd.Parameters.AddWithValue("@postname", tsbSearch.Text);
-                cmd.Parameters.AddWithValue("@position", tsbSearch.Text);
                 FormMain._instance.oledbconstring.Open();
                 OleDbDataReader reader = cmd.ExecuteReader();
                 DataTable dt = new DataTable();
@@ -90,7 +89,7 @@ namespace MS_Access.InformerForms
 
         public void tsbEdit_Click(object sender, EventArgs e)
         {
-            if (FormPosts.instance.dgvPosts.SelectedRows.Count == 0)
+            if (dgvPosts.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Տող ընտրված չէ");
                 return;
@@ -104,7 +103,7 @@ namespace MS_Access.InformerForms
         }
         public string GetPostName()
         {
-            string postname = FormPosts.instance.dgvPosts.CurrentRow.Cells[1].Value.ToString();
+            string postname = dgvPosts.CurrentRow.Cells[1].Value.ToString();
             return postname;
         }
 
@@ -119,7 +118,7 @@ namespace MS_Access.InformerForms
 
         private void tsbRemove_Click(object sender, EventArgs e)
         {
-            if (FormPosts.instance.dgvPosts.SelectedRows.Count == 0)
+            if (dgvPosts.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Տող ընտրված չէ");
                 return;
@@ -140,7 +139,7 @@ namespace MS_Access.InformerForms
                 }
                 else
                 {
-
+                    return;
                 }
             }
             

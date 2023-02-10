@@ -28,6 +28,7 @@ namespace MS_Access
 
         public bool isopenedposts = false;
         public bool isopenedbrowse = false;
+        public bool isopenedpositions = false;
         private void tspPost_Click(object sender, EventArgs e)
         {
             FormPosts f2 = new FormPosts();
@@ -64,7 +65,17 @@ namespace MS_Access
         public void tsmPosition_Click(object sender, EventArgs e)
         {
             FormPositions formPositions = new FormPositions();
-            formPositions.Show();
+            if (isopenedpositions == true)
+            {
+                MessageBox.Show("Պատուհանը արդեն բացված է");
+                formPositions.BringToFront();
+                return;
+            }
+            else
+            {
+                formPositions.Show();
+            }
+            isopenedpositions = true;
         }
     }
 }

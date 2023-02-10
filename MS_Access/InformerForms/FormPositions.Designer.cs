@@ -34,9 +34,13 @@
             this.tsbEdit = new System.Windows.Forms.ToolStripButton();
             this.tsbRemove = new System.Windows.Forms.ToolStripButton();
             this.tsbUpdate = new System.Windows.Forms.ToolStripButton();
-            this.dgvPosts = new System.Windows.Forms.DataGridView();
+            this.tsbSearch = new System.Windows.Forms.ToolStripTextBox();
+            this.tsbSearchIcon = new System.Windows.Forms.ToolStripButton();
+            this.dgvPostitions = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPosts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPostitions)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip2
@@ -46,10 +50,12 @@
             this.tsbNew,
             this.tsbEdit,
             this.tsbRemove,
-            this.tsbUpdate});
+            this.tsbUpdate,
+            this.tsbSearch,
+            this.tsbSearchIcon});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(800, 37);
+            this.toolStrip2.Size = new System.Drawing.Size(932, 37);
             this.toolStrip2.TabIndex = 1;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -62,6 +68,7 @@
             this.tsbNew.Size = new System.Drawing.Size(34, 34);
             this.tsbNew.Text = "toolStripButton1";
             this.tsbNew.ToolTipText = "Ավելացնել";
+            this.tsbNew.Click += new System.EventHandler(this.tsbNew_Click);
             // 
             // tsbEdit
             // 
@@ -72,6 +79,7 @@
             this.tsbEdit.Size = new System.Drawing.Size(34, 34);
             this.tsbEdit.Text = "toolStripButton2";
             this.tsbEdit.ToolTipText = "Խմբագրել";
+            this.tsbEdit.Click += new System.EventHandler(this.tsbEdit_Click);
             // 
             // tsbRemove
             // 
@@ -82,6 +90,7 @@
             this.tsbRemove.Size = new System.Drawing.Size(34, 34);
             this.tsbRemove.Text = "toolStripButton3";
             this.tsbRemove.ToolTipText = "Հեռացնել";
+            this.tsbRemove.Click += new System.EventHandler(this.tsbRemove_Click);
             // 
             // tsbUpdate
             // 
@@ -91,31 +100,63 @@
             this.tsbUpdate.Name = "tsbUpdate";
             this.tsbUpdate.Size = new System.Drawing.Size(34, 34);
             this.tsbUpdate.Text = "Թարմացնել";
-            this.tsbUpdate.Click += new System.EventHandler(this.tsbUpdate_Click);
+            this.tsbUpdate.Click += new System.EventHandler(this.tsbUpdatePositions_Click);
             // 
-            // dgvPosts
+            // tsbSearch
             // 
-            this.dgvPosts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPosts.Location = new System.Drawing.Point(0, 40);
-            this.dgvPosts.Name = "dgvPosts";
-            this.dgvPosts.RowHeadersWidth = 51;
-            this.dgvPosts.RowTemplate.Height = 24;
-            this.dgvPosts.Size = new System.Drawing.Size(800, 411);
-            this.dgvPosts.TabIndex = 2;
+            this.tsbSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tsbSearch.Name = "tsbSearch";
+            this.tsbSearch.Size = new System.Drawing.Size(150, 37);
+            // 
+            // tsbSearchIcon
+            // 
+            this.tsbSearchIcon.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbSearchIcon.Image = global::MS_Access.Properties.Resources.SearchMenu;
+            this.tsbSearchIcon.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSearchIcon.Name = "tsbSearchIcon";
+            this.tsbSearchIcon.Size = new System.Drawing.Size(34, 34);
+            this.tsbSearchIcon.Text = "Search";
+            this.tsbSearchIcon.Click += new System.EventHandler(this.tsbSearchIcon_Click);
+            // 
+            // dgvPostitions
+            // 
+            this.dgvPostitions.AllowUserToAddRows = false;
+            this.dgvPostitions.AllowUserToDeleteRows = false;
+            this.dgvPostitions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPostitions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPostitions.Location = new System.Drawing.Point(0, 0);
+            this.dgvPostitions.Name = "dgvPostitions";
+            this.dgvPostitions.ReadOnly = true;
+            this.dgvPostitions.RowHeadersWidth = 51;
+            this.dgvPostitions.RowTemplate.Height = 24;
+            this.dgvPostitions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPostitions.Size = new System.Drawing.Size(932, 507);
+            this.dgvPostitions.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dgvPostitions);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 37);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(932, 507);
+            this.panel1.TabIndex = 3;
             // 
             // FormPositions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dgvPosts);
+            this.ClientSize = new System.Drawing.Size(932, 544);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPositions";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Նախագիծ/Ստորաբաժանում";
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPosts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPostitions)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,6 +169,9 @@
         private System.Windows.Forms.ToolStripButton tsbEdit;
         private System.Windows.Forms.ToolStripButton tsbRemove;
         private System.Windows.Forms.ToolStripButton tsbUpdate;
-        private System.Windows.Forms.DataGridView dgvPosts;
+        public System.Windows.Forms.DataGridView dgvPostitions;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripTextBox tsbSearch;
+        private System.Windows.Forms.ToolStripButton tsbSearchIcon;
     }
 }
