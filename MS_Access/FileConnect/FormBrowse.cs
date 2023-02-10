@@ -23,7 +23,7 @@ namespace MS_Access.FileConnect
         {
             InitializeComponent();
             instance = this;
-            
+            this.FormClosing += Browse_FormClosing;
         }
 
 
@@ -42,6 +42,14 @@ namespace MS_Access.FileConnect
                 //}
 
                 // FileNameClass.FileName = FilePathBox.Text;
+            }
+        }
+
+        private void Browse_FormClosing(Object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                FormMain._instance.isopenedbrowse = false;
             }
         }
 

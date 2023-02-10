@@ -90,6 +90,7 @@
             this.tsbRemove.Size = new System.Drawing.Size(34, 34);
             this.tsbRemove.Text = "toolStripButton3";
             this.tsbRemove.ToolTipText = "Հեռացնել";
+            this.tsbRemove.Click += new System.EventHandler(this.tsbRemove_Click);
             // 
             // tsbUpdate
             // 

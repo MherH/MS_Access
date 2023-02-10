@@ -26,11 +26,12 @@ namespace MS_Access
             _instance = this;
         }
 
-        public bool isopened = false;
+        public bool isopenedposts = false;
+        public bool isopenedbrowse = false;
         private void tspPost_Click(object sender, EventArgs e)
         {
             FormPosts f2 = new FormPosts();
-            if (isopened == true)
+            if (isopenedposts == true)
             {
                 MessageBox.Show("Պատուհանը արդեն բացված է");
                 f2.BringToFront();
@@ -39,25 +40,25 @@ namespace MS_Access
             else
             {
                 f2.Show();
-                isopened = true;
+                isopenedposts = true;
             }
         }
 
         public void tsmBrowse_Click(object sender, EventArgs e)
         {
             FormBrowse formBrowse = new FormBrowse();
-            if (formBrowse.DialogResult == DialogResult.OK)
+            if (isopenedbrowse == true)
             {
                 MessageBox.Show("Պատուհանը արդեն բացված է");
+                formBrowse.BringToFront();
                 return;
             }
             else
             {
-                formBrowse.ShowDialog();
+                formBrowse.Show();
                 this.Connstring = formBrowse.connstring;
-
+                isopenedbrowse = true;
             }
-
         }
 
         public void tsmPosition_Click(object sender, EventArgs e)

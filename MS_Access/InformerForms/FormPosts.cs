@@ -21,16 +21,11 @@ namespace MS_Access.InformerForms
     {
         OleDbCommand cmd;
         public static FormPosts instance;
-        //public string editid;
-        //public string editpostname;
-        //public string editpostition;
+
 
         public FormPosts()
         {
             InitializeComponent();
-            //editid = editidtext;
-            //editpostition = editpositionnametext;
-            //editpostname = editpostnametext;
             instance = this;
             this.FormClosing += Posts_FormClosing;
         }
@@ -72,53 +67,84 @@ namespace MS_Access.InformerForms
             addPosts.ShowDialog();
         }
 
-        private void dgvLoad()
-        { 
-        OleDbConnection con = new OleDbConnection();
-            con.ConnectionString = FormMain._instance.Connstring;
-            con.Open();
-
-        }
-
         private void tsbSearch_Click(object sender, EventArgs e)
         {
             if (tsbSearch.Text == "" || tsbSearch.Text == null)
-                return;
-            string searchQuery = "SELECT * FROM Posts WHERE (Posts.[PostName] = " + "@postname" + " or Posts.[Position] = @position)";
-            cmd = new OleDbCommand(searchQuery, FormMain._instance.oledbconstring);
-            cmd.Parameters.AddWithValue("@postname", tsbSearch.Text);
-            cmd.Parameters.AddWithValue("@position", tsbSearch.Text);
-            FormMain._instance.oledbconstring.Open();
-            OleDbDataReader reader = cmd.ExecuteReader();
-            DataTable dt = new DataTable();
-            dt.Load(reader);
-            FormMain._instance.oledbconstring.Close();
-            tsbSearch.Clear();
+            {
+                tsbUpdate_Click(null, null);
+            }
+            else
+            {
+                string searchQuery = "SELECT * FROM Posts WHERE (Posts.[PostName] = " + "@postname" + " or Posts.[Position] = @position)";
+                cmd = new OleDbCommand(searchQuery, FormMain._instance.oledbconstring);
+                cmd.Parameters.AddWithValue("@postname", tsbSearch.Text);
+                cmd.Parameters.AddWithValue("@position", tsbSearch.Text);
+                FormMain._instance.oledbconstring.Open();
+                OleDbDataReader reader = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+                FormMain._instance.oledbconstring.Close();
+                dgvPosts.DataSource = dt.DefaultView;
+            }
         }
-
-        public bool searchclicked = false;
 
         public void tsbEdit_Click(object sender, EventArgs e)
         {
-            if(FormPosts.instance.dgvPosts.SelectedRows.Count == 0 )
+            if (FormPosts.instance.dgvPosts.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Տող ընտրված չէ");
                 return;
             }
-            //FormEditPosts.instance.txtPostNameEdit.Text = dgvPosts.CurrentRow.Cells[1].Value.ToString();
-            //FormEditPosts.instance.txtPositionNameEdit.Text = dgvPosts.CurrentRow.Cells[2].Value.ToString();
-            FormEditPosts editPosts = new FormEditPosts();
-            editPosts.ShowDialog();
+            else
+            {
+                FormEditPosts editPosts = new FormEditPosts();
+                editPosts.ShowDialog();
+            }
 
+        }
+        public string GetPostName()
+        {
+            string postname = FormPosts.instance.dgvPosts.CurrentRow.Cells[1].Value.ToString();
+            return postname;
         }
 
         private void Posts_FormClosing(Object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                FormMain._instance.isopened = false;
+                FormMain._instance.isopenedposts = false;
             }
         }
 
+
+        private void tsbRemove_Click(object sender, EventArgs e)
+        {
+            if (FormPosts.instance.dgvPosts.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Տող ընտրված չէ");
+                return;
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Համոզվա՞ծ եք, որ ցանկանում եք հեռացնել նշված տողը", "Զգուշացում", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    string deletequery = "delete from Posts where ( id = " + "@id )";
+                    cmd = new OleDbCommand(deletequery, FormMain._instance.oledbconstring);
+                    cmd.Parameters.AddWithValue("@id", Convert.ToInt32(dgvPosts.CurrentRow.Cells[0].Value.ToString()));
+                    FormMain._instance.oledbconstring.Open();
+                    cmd.ExecuteNonQuery();
+                    FormMain._instance.oledbconstring.Close();
+                    MessageBox.Show("Տվյալները հեռացված են");
+                    FormPosts.instance.tsbUpdate_Click(null, null);
+                }
+                else
+                {
+
+                }
+            }
+            
+
+        }
     }
 }
