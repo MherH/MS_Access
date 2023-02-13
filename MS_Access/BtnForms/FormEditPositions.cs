@@ -21,7 +21,7 @@ namespace MS_Access.BtnForms
         {
             InitializeComponent();
             instance = this;
-            txtPositionNameEdit.Text = FormPositions.instance.GetPositionName();
+            txtPositionNameEdit.Text = FormPositions.instanceposition.GetPositionName();
         }
 
 
@@ -30,12 +30,12 @@ namespace MS_Access.BtnForms
             string insertQuery = "UPDATE Positions SET Positions.PositionName =" + " @positionname " + "WHERE (id = @id);";
             command = new OleDbCommand(insertQuery, FormMain._instance.oledbconstring);
             command.Parameters.AddWithValue("@positionname", txtPositionNameEdit.Text);
-            command.Parameters.AddWithValue("@id", Convert.ToInt32(FormPositions.instance.dgvPostitions.CurrentRow.Cells[0].Value.ToString()));
+            command.Parameters.AddWithValue("@id", Convert.ToInt32(FormPositions.instanceposition.dgvPostitions.CurrentRow.Cells[0].Value.ToString()));
             FormMain._instance.oledbconstring.Open();
             command.ExecuteNonQuery();
             FormMain._instance.oledbconstring.Close();
             MessageBox.Show("Տվյալները թարմացված են");
-            FormPositions.instance.tsbUpdatePositions_Click(null, null);
+            FormPositions.instanceposition.tsbUpdatePositions_Click(null, null);
             this.Close();
             txtPositionNameEdit.Clear();
         }

@@ -116,11 +116,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BtnForms\FormAddCity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BtnForms\FormAddCity.Designer.cs">
+      <DependentUpon>FormAddCity.cs</DependentUpon>
+    </Compile>
     <Compile Include="BtnForms\FormAddPositions.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BtnForms\FormAddPositions.Designer.cs">
       <DependentUpon>FormAddPositions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BtnForms\FormEditCity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BtnForms\FormEditCity.Designer.cs">
+      <DependentUpon>FormEditCity.cs</DependentUpon>
     </Compile>
     <Compile Include="BtnForms\FormEditPositions.cs">
       <SubType>Form</SubType>
@@ -158,6 +170,12 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="InformerForms\CityProvince.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformerForms\CityProvince.Designer.cs">
+      <DependentUpon>CityProvince.cs</DependentUpon>
+    </Compile>
     <Compile Include="InformerForms\FormPositions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +190,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BtnForms\FormAddCity.resx">
+      <DependentUpon>FormAddCity.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BtnForms\FormAddPositions.resx">
       <DependentUpon>FormAddPositions.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformerForms\CityProvince.resx">
+      <DependentUpon>CityProvince.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InformerForms\FormPositions.resx">
       <DependentUpon>FormPositions.cs</DependentUpon>

@@ -57,7 +57,7 @@
             this.tsmKadrer});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -66,7 +66,7 @@
             this.tsmStart.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmInformers});
             this.tsmStart.Name = "tsmStart";
-            this.tsmStart.Size = new System.Drawing.Size(67, 26);
+            this.tsmStart.Size = new System.Drawing.Size(67, 24);
             this.tsmStart.Text = "Սկիզբ";
             // 
             // tsmInformers
@@ -114,6 +114,7 @@
             this.tsmCity.Name = "tsmCity";
             this.tsmCity.Size = new System.Drawing.Size(316, 26);
             this.tsmCity.Text = "Քաղաք/մարզ";
+            this.tsmCity.Click += new System.EventHandler(this.tsmCity_Click);
             // 
             // tsmEduc
             // 
@@ -130,20 +131,20 @@
             // tsmBrowse
             // 
             this.tsmBrowse.Name = "tsmBrowse";
-            this.tsmBrowse.Size = new System.Drawing.Size(56, 26);
+            this.tsmBrowse.Size = new System.Drawing.Size(56, 24);
             this.tsmBrowse.Text = "Ֆայլ";
             this.tsmBrowse.Click += new System.EventHandler(this.tsmBrowse_Click);
             // 
             // tsmFinance
             // 
             this.tsmFinance.Name = "tsmFinance";
-            this.tsmFinance.Size = new System.Drawing.Size(81, 26);
+            this.tsmFinance.Size = new System.Drawing.Size(81, 24);
             this.tsmFinance.Text = "Ֆինանս";
             // 
             // tsmKadrer
             // 
             this.tsmKadrer.Name = "tsmKadrer";
-            this.tsmKadrer.Size = new System.Drawing.Size(79, 26);
+            this.tsmKadrer.Size = new System.Drawing.Size(79, 24);
             this.tsmKadrer.Text = "Կադրեր";
             // 
             // MSLogoMain
@@ -151,9 +152,9 @@
             this.MSLogoMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MSLogoMain.Image = global::MS_Access.Properties.Resources.LogoOlny;
             this.MSLogoMain.InitialImage = null;
-            this.MSLogoMain.Location = new System.Drawing.Point(0, 30);
+            this.MSLogoMain.Location = new System.Drawing.Point(0, 28);
             this.MSLogoMain.Name = "MSLogoMain";
-            this.MSLogoMain.Size = new System.Drawing.Size(800, 420);
+            this.MSLogoMain.Size = new System.Drawing.Size(800, 422);
             this.MSLogoMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.MSLogoMain.TabIndex = 1;
             this.MSLogoMain.TabStop = false;

@@ -15,11 +15,11 @@ namespace MS_Access.InformerForms
     public partial class FormPositions : Form
     {
         OleDbCommand cmd;
-        public static FormPositions instance;
+        public static FormPositions instanceposition;
         public FormPositions()
         {
             InitializeComponent();
-            instance = this;
+            instanceposition = this;
             this.FormClosing += Positions_FormClosing;
 
         }
@@ -65,7 +65,7 @@ namespace MS_Access.InformerForms
             }
             else
             {
-                string searchQuery = "SELECT * FROM Positions WHERE (Posts.[PositionName] = " + "@positionname)";
+                string searchQuery = "SELECT * FROM Positions WHERE (Positions.[PositionName] = " + "@positionname)";
                 cmd = new OleDbCommand(searchQuery, FormMain._instance.oledbconstring);
                 cmd.Parameters.AddWithValue("@positionname", tsbSearch.Text);
                 FormMain._instance.oledbconstring.Open();
@@ -93,7 +93,7 @@ namespace MS_Access.InformerForms
 
         private void tsbEdit_Click(object sender, EventArgs e)
         {
-            if (FormPositions.instance.dgvPostitions.SelectedRows.Count == 0)
+            if (dgvPostitions.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Տող ընտրված չէ");
                 return;

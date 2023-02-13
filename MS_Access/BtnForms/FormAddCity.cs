@@ -12,32 +12,31 @@ using System.Windows.Forms;
 
 namespace MS_Access.BtnForms
 {
-    public partial class FormAddPositions : Form
+    public partial class FormAddCity : Form
     {
         OleDbCommand command;
-        public string positionnametext;
-        public FormAddPositions()
+        public FormAddCity()
         {
             InitializeComponent();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string insertQuery = "INSERT INTO Positions ( PositionName )\r\nSELECT" + " @positionname AS Expr1;";
+            string insertQuery = "INSERT INTO City ( City )\r\nSELECT" + " @cityname AS Expr1;";
             command = new OleDbCommand(insertQuery, FormMain._instance.oledbconstring);
-            command.Parameters.AddWithValue("@positionname", txtPositionName.Text);
+            command.Parameters.AddWithValue("@cityname", txtCityName.Text);
             FormMain._instance.oledbconstring.Open();
             command.ExecuteNonQuery();
             FormMain._instance.oledbconstring.Close();
             MessageBox.Show("Տվյալները գրանցված են");
-            FormPositions.instanceposition.tsbUpdatePositions_Click(null, null);
+            CityProvince.instancecity.tsbUpdateCity_Click(null, null);
             this.Close();
-            txtPositionName.Clear();
+            txtCityName.Clear();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            txtPositionName.Clear();
+            txtCityName.Clear();
             this.Close();
         }
     }
