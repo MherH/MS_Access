@@ -199,6 +199,9 @@
     <EmbeddedResource Include="BtnForms\FormAddPosts.resx">
       <DependentUpon>FormAddPosts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BtnForms\FormEditCity.resx">
+      <DependentUpon>FormEditCity.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BtnForms\FormEditPositions.resx">
       <DependentUpon>FormEditPositions.cs</DependentUpon>
     </EmbeddedResource>
