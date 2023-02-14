@@ -38,7 +38,7 @@
             // 
             // lblPostPost
             // 
-            this.lblPostPost.Location = new System.Drawing.Point(6, 76);
+            this.lblPostPost.Location = new System.Drawing.Point(86, 40);
             this.lblPostPost.Name = "lblPostPost";
             this.lblPostPost.Size = new System.Drawing.Size(189, 27);
             this.lblPostPost.TabIndex = 1;
@@ -47,11 +47,11 @@
             // 
             // txtPositionName
             // 
-            this.txtPositionName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPositionName.Location = new System.Drawing.Point(201, 73);
+            this.txtPositionName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPositionName.Location = new System.Drawing.Point(69, 91);
             this.txtPositionName.Multiline = true;
             this.txtPositionName.Name = "txtPositionName";
-            this.txtPositionName.Size = new System.Drawing.Size(159, 30);
+            this.txtPositionName.Size = new System.Drawing.Size(228, 27);
             this.txtPositionName.TabIndex = 2;
             // 
             // groupboxNewPost

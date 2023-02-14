@@ -1,6 +1,6 @@
 ﻿namespace MS_Access.InformerForms
 {
-    partial class FormPositions
+    partial class FormCompanyReg
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPositions));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCompanyReg));
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.tsbNew = new System.Windows.Forms.ToolStripButton();
             this.tsbEdit = new System.Windows.Forms.ToolStripButton();
             this.tsbRemove = new System.Windows.Forms.ToolStripButton();
-            this.tsbUpdate = new System.Windows.Forms.ToolStripButton();
+            this.tsbUpdateCompany = new System.Windows.Forms.ToolStripButton();
             this.tsbSearch = new System.Windows.Forms.ToolStripTextBox();
             this.tsbSearchIcon = new System.Windows.Forms.ToolStripButton();
-            this.dgvPostitions = new System.Windows.Forms.DataGridView();
+            this.dgvCompany = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPostitions)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompany)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             this.tsbNew,
             this.tsbEdit,
             this.tsbRemove,
-            this.tsbUpdate,
+            this.tsbUpdateCompany,
             this.tsbSearch,
             this.tsbSearchIcon});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
@@ -92,15 +92,15 @@
             this.tsbRemove.ToolTipText = "Հեռացնել";
             this.tsbRemove.Click += new System.EventHandler(this.tsbRemove_Click);
             // 
-            // tsbUpdate
+            // tsbUpdateCompany
             // 
-            this.tsbUpdate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbUpdate.Image = global::MS_Access.Properties.Resources._1_Refresh2_24;
-            this.tsbUpdate.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbUpdate.Name = "tsbUpdate";
-            this.tsbUpdate.Size = new System.Drawing.Size(34, 34);
-            this.tsbUpdate.Text = "Թարմացնել";
-            this.tsbUpdate.Click += new System.EventHandler(this.tsbUpdatePositions_Click);
+            this.tsbUpdateCompany.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbUpdateCompany.Image = global::MS_Access.Properties.Resources._1_Refresh2_24;
+            this.tsbUpdateCompany.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbUpdateCompany.Name = "tsbUpdateCompany";
+            this.tsbUpdateCompany.Size = new System.Drawing.Size(34, 34);
+            this.tsbUpdateCompany.Text = "Թարմացնել";
+            this.tsbUpdateCompany.Click += new System.EventHandler(this.tsbUpdateCompany_Click);
             // 
             // tsbSearch
             // 
@@ -118,32 +118,32 @@
             this.tsbSearchIcon.Text = "Search";
             this.tsbSearchIcon.Click += new System.EventHandler(this.tsbSearchIcon_Click);
             // 
-            // dgvPostitions
+            // dgvCompany
             // 
-            this.dgvPostitions.AllowUserToAddRows = false;
-            this.dgvPostitions.AllowUserToDeleteRows = false;
-            this.dgvPostitions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPostitions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPostitions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPostitions.Location = new System.Drawing.Point(0, 0);
-            this.dgvPostitions.Name = "dgvPostitions";
-            this.dgvPostitions.ReadOnly = true;
-            this.dgvPostitions.RowHeadersWidth = 51;
-            this.dgvPostitions.RowTemplate.Height = 24;
-            this.dgvPostitions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPostitions.Size = new System.Drawing.Size(932, 507);
-            this.dgvPostitions.TabIndex = 2;
+            this.dgvCompany.AllowUserToAddRows = false;
+            this.dgvCompany.AllowUserToDeleteRows = false;
+            this.dgvCompany.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCompany.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCompany.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCompany.Location = new System.Drawing.Point(0, 0);
+            this.dgvCompany.Name = "dgvCompany";
+            this.dgvCompany.ReadOnly = true;
+            this.dgvCompany.RowHeadersWidth = 51;
+            this.dgvCompany.RowTemplate.Height = 24;
+            this.dgvCompany.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCompany.Size = new System.Drawing.Size(932, 507);
+            this.dgvCompany.TabIndex = 2;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dgvPostitions);
+            this.panel1.Controls.Add(this.dgvCompany);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 37);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(932, 507);
             this.panel1.TabIndex = 3;
             // 
-            // FormPositions
+            // FormCompanyReg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -151,12 +151,12 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FormPositions";
+            this.Name = "FormCompanyReg";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Նախագիծ/Ստորաբաժանում";
+            this.Text = "Գրանցված Կազմ․";
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPostitions)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompany)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -169,8 +169,8 @@
         private System.Windows.Forms.ToolStripButton tsbNew;
         private System.Windows.Forms.ToolStripButton tsbEdit;
         private System.Windows.Forms.ToolStripButton tsbRemove;
-        private System.Windows.Forms.ToolStripButton tsbUpdate;
-        public System.Windows.Forms.DataGridView dgvPostitions;
+        private System.Windows.Forms.ToolStripButton tsbUpdateCompany;
+        public System.Windows.Forms.DataGridView dgvCompany;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripTextBox tsbSearch;
         private System.Windows.Forms.ToolStripButton tsbSearchIcon;

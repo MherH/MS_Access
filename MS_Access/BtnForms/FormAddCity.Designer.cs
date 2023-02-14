@@ -38,20 +38,20 @@
             // 
             // lblCity
             // 
-            this.lblCity.Location = new System.Drawing.Point(6, 76);
+            this.lblCity.Location = new System.Drawing.Point(100, 51);
             this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(189, 27);
+            this.lblCity.Size = new System.Drawing.Size(181, 27);
             this.lblCity.TabIndex = 1;
             this.lblCity.Text = "Քաղաք/մարզ անվանում";
             this.lblCity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtCityName
             // 
-            this.txtCityName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCityName.Location = new System.Drawing.Point(201, 73);
+            this.txtCityName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCityName.Location = new System.Drawing.Point(67, 97);
             this.txtCityName.Multiline = true;
             this.txtCityName.Name = "txtCityName";
-            this.txtCityName.Size = new System.Drawing.Size(159, 30);
+            this.txtCityName.Size = new System.Drawing.Size(236, 26);
             this.txtCityName.TabIndex = 2;
             // 
             // groupboxNewCity

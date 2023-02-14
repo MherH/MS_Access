@@ -1,6 +1,6 @@
 ﻿namespace MS_Access.BtnForms
 {
-    partial class FormEditPositions
+    partial class FormEditCompany
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditCompany));
             this.btnCancelEdit = new System.Windows.Forms.Button();
             this.btnSaveEdit = new System.Windows.Forms.Button();
-            this.txtPositionNameEdit = new System.Windows.Forms.TextBox();
-            this.lblPosition = new System.Windows.Forms.Label();
-            this.groupboxNewPost = new System.Windows.Forms.GroupBox();
-            this.groupboxNewPost.SuspendLayout();
+            this.txtCompanyNameEdit = new System.Windows.Forms.TextBox();
+            this.lblCompany = new System.Windows.Forms.Label();
+            this.groupboxEditCompany = new System.Windows.Forms.GroupBox();
+            this.groupboxEditCompany.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancelEdit
@@ -46,7 +47,6 @@
             this.btnCancelEdit.TabIndex = 14;
             this.btnCancelEdit.Text = "Չեղարկել";
             this.btnCancelEdit.UseVisualStyleBackColor = false;
-            this.btnCancelEdit.Click += new System.EventHandler(this.btnCancelEdit_Click);
             // 
             // btnSaveEdit
             // 
@@ -60,48 +60,49 @@
             this.btnSaveEdit.UseVisualStyleBackColor = false;
             this.btnSaveEdit.Click += new System.EventHandler(this.btnSaveEdit_Click);
             // 
-            // txtPositionNameEdit
+            // txtCompanyNameEdit
             // 
-            this.txtPositionNameEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPositionNameEdit.Location = new System.Drawing.Point(69, 99);
-            this.txtPositionNameEdit.Multiline = true;
-            this.txtPositionNameEdit.Name = "txtPositionNameEdit";
-            this.txtPositionNameEdit.Size = new System.Drawing.Size(218, 26);
-            this.txtPositionNameEdit.TabIndex = 9;
+            this.txtCompanyNameEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCompanyNameEdit.Location = new System.Drawing.Point(66, 85);
+            this.txtCompanyNameEdit.Multiline = true;
+            this.txtCompanyNameEdit.Name = "txtCompanyNameEdit";
+            this.txtCompanyNameEdit.Size = new System.Drawing.Size(231, 27);
+            this.txtCompanyNameEdit.TabIndex = 9;
             // 
-            // lblPosition
+            // lblCompany
             // 
-            this.lblPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosition.Location = new System.Drawing.Point(84, 40);
-            this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(191, 30);
-            this.lblPosition.TabIndex = 8;
-            this.lblPosition.Text = "Ստորաբաժանման անվանում";
-            this.lblPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompany.Location = new System.Drawing.Point(66, 36);
+            this.lblCompany.Name = "lblCompany";
+            this.lblCompany.Size = new System.Drawing.Size(231, 30);
+            this.lblCompany.TabIndex = 8;
+            this.lblCompany.Text = "Գրանցված կազմ․ անվանում";
+            this.lblCompany.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // groupboxNewPost
+            // groupboxEditCompany
             // 
-            this.groupboxNewPost.Controls.Add(this.txtPositionNameEdit);
-            this.groupboxNewPost.Controls.Add(this.lblPosition);
-            this.groupboxNewPost.Location = new System.Drawing.Point(72, 29);
-            this.groupboxNewPost.Name = "groupboxNewPost";
-            this.groupboxNewPost.Size = new System.Drawing.Size(366, 168);
-            this.groupboxNewPost.TabIndex = 12;
-            this.groupboxNewPost.TabStop = false;
+            this.groupboxEditCompany.Controls.Add(this.txtCompanyNameEdit);
+            this.groupboxEditCompany.Controls.Add(this.lblCompany);
+            this.groupboxEditCompany.Location = new System.Drawing.Point(72, 29);
+            this.groupboxEditCompany.Name = "groupboxEditCompany";
+            this.groupboxEditCompany.Size = new System.Drawing.Size(366, 168);
+            this.groupboxEditCompany.TabIndex = 12;
+            this.groupboxEditCompany.TabStop = false;
             // 
-            // FormEditPositions
+            // FormEditCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(506, 260);
             this.Controls.Add(this.btnCancelEdit);
             this.Controls.Add(this.btnSaveEdit);
-            this.Controls.Add(this.groupboxNewPost);
-            this.Name = "FormEditPositions";
+            this.Controls.Add(this.groupboxEditCompany);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FormEditCompany";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Խմբագրել";
-            this.groupboxNewPost.ResumeLayout(false);
-            this.groupboxNewPost.PerformLayout();
+            this.groupboxEditCompany.ResumeLayout(false);
+            this.groupboxEditCompany.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -110,8 +111,8 @@
 
         private System.Windows.Forms.Button btnCancelEdit;
         private System.Windows.Forms.Button btnSaveEdit;
-        private System.Windows.Forms.Label lblPosition;
-        private System.Windows.Forms.GroupBox groupboxNewPost;
-        public System.Windows.Forms.TextBox txtPositionNameEdit;
+        private System.Windows.Forms.Label lblCompany;
+        private System.Windows.Forms.GroupBox groupboxEditCompany;
+        public System.Windows.Forms.TextBox txtCompanyNameEdit;
     }
 }

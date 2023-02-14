@@ -62,16 +62,17 @@
             // 
             // txtCityNameEdit
             // 
-            this.txtCityNameEdit.Location = new System.Drawing.Point(203, 71);
+            this.txtCityNameEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCityNameEdit.Location = new System.Drawing.Point(66, 91);
             this.txtCityNameEdit.Multiline = true;
             this.txtCityNameEdit.Name = "txtCityNameEdit";
-            this.txtCityNameEdit.Size = new System.Drawing.Size(157, 30);
+            this.txtCityNameEdit.Size = new System.Drawing.Size(233, 27);
             this.txtCityNameEdit.TabIndex = 9;
             // 
             // lblCity
             // 
             this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCity.Location = new System.Drawing.Point(-3, 71);
+            this.lblCity.Location = new System.Drawing.Point(90, 34);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(183, 30);
             this.lblCity.TabIndex = 8;

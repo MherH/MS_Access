@@ -30,6 +30,7 @@ namespace MS_Access
         public bool isopenedbrowse = false;
         public bool isopenedpositions = false;
         public bool isopenedcity = false;
+        public bool isopenedcompanyform = false;
         private void tspPost_Click(object sender, EventArgs e)
         {
             FormPosts f2 = new FormPosts();
@@ -93,6 +94,22 @@ namespace MS_Access
                 formCity.Show();
             }
             isopenedcity = true;
+        }
+
+        private void tsmCompanyReg_Click(object sender, EventArgs e)
+        {
+            FormCompanyReg formCompany = new FormCompanyReg();
+            if (isopenedcity == true)
+            {
+                MessageBox.Show("Պատուհանը արդեն բացված է");
+                formCompany.BringToFront();
+                return;
+            }
+            else
+            {
+                formCompany.Show();
+            }
+            isopenedcompanyform = true;
         }
     }
 }

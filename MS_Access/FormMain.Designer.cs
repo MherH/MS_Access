@@ -102,6 +102,7 @@
             this.tsmCompanyReg.Name = "tsmCompanyReg";
             this.tsmCompanyReg.Size = new System.Drawing.Size(316, 26);
             this.tsmCompanyReg.Text = "Գրանցված կազմակերպություն";
+            this.tsmCompanyReg.Click += new System.EventHandler(this.tsmCompanyReg_Click);
             // 
             // tsmAdmDiv
             // 

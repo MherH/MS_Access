@@ -122,6 +122,7 @@
             // 
             this.dgvCity.AllowUserToAddRows = false;
             this.dgvCity.AllowUserToDeleteRows = false;
+            this.dgvCity.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCity.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCity.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCity.Location = new System.Drawing.Point(0, 0);

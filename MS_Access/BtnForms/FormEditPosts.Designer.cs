@@ -63,16 +63,17 @@
             // 
             // txtPostNameEdit
             // 
-            this.txtPostNameEdit.Location = new System.Drawing.Point(165, 68);
+            this.txtPostNameEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPostNameEdit.Location = new System.Drawing.Point(68, 94);
             this.txtPostNameEdit.Multiline = true;
             this.txtPostNameEdit.Name = "txtPostNameEdit";
-            this.txtPostNameEdit.Size = new System.Drawing.Size(177, 33);
+            this.txtPostNameEdit.Size = new System.Drawing.Size(225, 28);
             this.txtPostNameEdit.TabIndex = 9;
             // 
             // lblPostPost
             // 
             this.lblPostPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPostPost.Location = new System.Drawing.Point(6, 71);
+            this.lblPostPost.Location = new System.Drawing.Point(115, 41);
             this.lblPostPost.Name = "lblPostPost";
             this.lblPostPost.Size = new System.Drawing.Size(134, 30);
             this.lblPostPost.TabIndex = 8;

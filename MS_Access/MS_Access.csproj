@@ -122,6 +122,12 @@
     <Compile Include="BtnForms\FormAddCity.Designer.cs">
       <DependentUpon>FormAddCity.cs</DependentUpon>
     </Compile>
+    <Compile Include="BtnForms\FormAddCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BtnForms\FormAddCompany.Designer.cs">
+      <DependentUpon>FormAddCompany.cs</DependentUpon>
+    </Compile>
     <Compile Include="BtnForms\FormAddPositions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,12 @@
     </Compile>
     <Compile Include="BtnForms\FormEditCity.Designer.cs">
       <DependentUpon>FormEditCity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BtnForms\FormEditCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BtnForms\FormEditCompany.Designer.cs">
+      <DependentUpon>FormEditCompany.cs</DependentUpon>
     </Compile>
     <Compile Include="BtnForms\FormEditPositions.cs">
       <SubType>Form</SubType>
@@ -176,6 +188,12 @@
     <Compile Include="InformerForms\CityProvince.Designer.cs">
       <DependentUpon>CityProvince.cs</DependentUpon>
     </Compile>
+    <Compile Include="InformerForms\FormCompanyReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformerForms\FormCompanyReg.Designer.cs">
+      <DependentUpon>FormCompanyReg.cs</DependentUpon>
+    </Compile>
     <Compile Include="InformerForms\FormPositions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +211,9 @@
     <EmbeddedResource Include="BtnForms\FormAddCity.resx">
       <DependentUpon>FormAddCity.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BtnForms\FormAddCompany.resx">
+      <DependentUpon>FormAddCompany.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BtnForms\FormAddPositions.resx">
       <DependentUpon>FormAddPositions.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BtnForms\FormEditCity.resx">
       <DependentUpon>FormEditCity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BtnForms\FormEditCompany.resx">
+      <DependentUpon>FormEditCompany.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BtnForms\FormEditPositions.resx">
       <DependentUpon>FormEditPositions.cs</DependentUpon>
@@ -219,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InformerForms\CityProvince.resx">
       <DependentUpon>CityProvince.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformerForms\FormCompanyReg.resx">
+      <DependentUpon>FormCompanyReg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InformerForms\FormPositions.resx">
       <DependentUpon>FormPositions.cs</DependentUpon>
