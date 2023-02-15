@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using MS_Access.MSComponents;
 
 namespace MS_Access
 {
@@ -77,7 +78,7 @@ namespace MS_Access
             {
                 formPositions.Show();
             }
-            isopenedpositions = true;
+            OwnDataGridView.instanceown.isopenedform = true;
         }
 
         private void tsmCity_Click(object sender, EventArgs e)
@@ -93,7 +94,7 @@ namespace MS_Access
             {
                 formCity.Show();
             }
-            isopenedcity = true;
+            OwnDataGridView.instanceown.isopenedform = true;
         }
 
         private void tsmCompanyReg_Click(object sender, EventArgs e)
@@ -109,7 +110,23 @@ namespace MS_Access
             {
                 formCompany.Show();
             }
-            isopenedcompanyform = true;
+            OwnDataGridView.instanceown.isopenedform = true;
+        }
+
+        private void tsmAdmDiv_Click(object sender, EventArgs e)
+        {
+            FormAdmDiv formAdmDiv= new FormAdmDiv();
+            if (OwnDataGridView.instanceown.isopenedform == true)
+            {
+                MessageBox.Show("Պատուհանը արդեն բացված է");
+                formAdmDiv.BringToFront();
+                return;
+            }
+            else
+            {
+                formAdmDiv.Show();
+            }
+            OwnDataGridView.instanceown.isopenedform = true;
         }
     }
 }

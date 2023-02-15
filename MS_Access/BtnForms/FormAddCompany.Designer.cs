@@ -51,7 +51,7 @@
             this.txtCompanyName.Location = new System.Drawing.Point(56, 97);
             this.txtCompanyName.Multiline = true;
             this.txtCompanyName.Name = "txtCompanyName";
-            this.txtCompanyName.Size = new System.Drawing.Size(380, 30);
+            this.txtCompanyName.Size = new System.Drawing.Size(243, 27);
             this.txtCompanyName.TabIndex = 2;
             // 
             // groupboxNewCompany

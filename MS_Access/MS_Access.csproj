@@ -188,6 +188,12 @@
     <Compile Include="InformerForms\CityProvince.Designer.cs">
       <DependentUpon>CityProvince.cs</DependentUpon>
     </Compile>
+    <Compile Include="InformerForms\FormAdmDiv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformerForms\FormAdmDiv.Designer.cs">
+      <DependentUpon>FormAdmDiv.cs</DependentUpon>
+    </Compile>
     <Compile Include="InformerForms\FormCompanyReg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,12 @@
     </Compile>
     <Compile Include="InformerForms\FormPosts.Designer.cs">
       <DependentUpon>FormPosts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MSComponents\OwnDataGridView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MSComponents\OwnDataGridView.Designer.cs">
+      <DependentUpon>OwnDataGridView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -244,6 +256,9 @@
     <EmbeddedResource Include="InformerForms\CityProvince.resx">
       <DependentUpon>CityProvince.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InformerForms\FormAdmDiv.resx">
+      <DependentUpon>FormAdmDiv.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InformerForms\FormCompanyReg.resx">
       <DependentUpon>FormCompanyReg.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InformerForms\FormPosts.resx">
       <DependentUpon>FormPosts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSComponents\OwnDataGridView.resx">
+      <DependentUpon>OwnDataGridView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

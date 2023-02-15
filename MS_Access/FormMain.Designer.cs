@@ -109,6 +109,7 @@
             this.tsmAdmDiv.Name = "tsmAdmDiv";
             this.tsmAdmDiv.Size = new System.Drawing.Size(316, 26);
             this.tsmAdmDiv.Text = "Համայնք";
+            this.tsmAdmDiv.Click += new System.EventHandler(this.tsmAdmDiv_Click);
             // 
             // tsmCity
             // 
